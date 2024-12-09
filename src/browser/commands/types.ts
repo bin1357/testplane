@@ -17,7 +17,7 @@ export type AssertViewCommandWithoutSelector = (
 export type AssertViewCommand = AssertViewCommandWithSelector & AssertViewCommandWithoutSelector;
 
 export type AssertViewElementCommand = (
-    this: WebdriverIO.Element | ChainablePromiseElement<WebdriverIO.Element>,
+    this: WebdriverIO.Element | ChainablePromiseElement,
     state: string,
     opts?: AssertViewOpts,
 ) => Promise<void>;

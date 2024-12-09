@@ -104,6 +104,8 @@ export class Testplane extends BaseTestplane {
             reporters = [],
         }: Partial<RunOpts> = {},
     ): Promise<boolean> {
+        console.log('RUN TESTPLANE');
+
         validateUnknownBrowsers(browsers!, _.keys(this._config.browsers));
 
         RuntimeConfig.getInstance().extend({ updateRefs, requireModules, inspectMode, replMode, devtools, local });

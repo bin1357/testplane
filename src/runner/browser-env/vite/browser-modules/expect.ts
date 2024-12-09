@@ -49,9 +49,9 @@ function mockMatcher(matcherName: string): MockMatcherFn {
         /**
          * Check if context is ChainablePromiseElement
          */
-        if (isContextObject && "then" in context && typeof context.selector === "object") {
-            matcherPayload.element = await context;
-        }
+        // if (isContextObject && "then" in context && typeof context.selector === "object") {
+        //     matcherPayload.element = await context;
+        // }
 
         /**
          * Check if context is an `Element` and transform it into a WebdriverIO.Element

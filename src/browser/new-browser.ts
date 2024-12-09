@@ -1,8 +1,10 @@
 import { URLSearchParams } from "url";
+// import { RequestOptions } from "https";
 
 import URI from "urijs";
 import { isBoolean, assign, isEmpty } from "lodash";
-import { remote, RemoteOptions } from "webdriverio";
+import { remote } from "webdriverio";
+import type { Capabilities } from '@wdio/types';
 
 import { Browser, BrowserOpts } from "./browser";
 import signalHandler from "../signal-handler";
@@ -122,7 +124,7 @@ export class NewBrowser extends Browser {
         return this._config.gridUrl === LOCAL_GRID_URL || getInstance().local;
     }
 
-    protected async _getSessionOpts(): Promise<RemoteOptions> {
+    protected async _getSessionOpts(): Promise<Capabilities.WebdriverIOConfig> {
         const config = this._config;
 
         let gridUrl;
@@ -156,7 +158,7 @@ export class NewBrowser extends Browser {
             ...this._getSessionOptsFromConfig(),
         };
 
-        return options as RemoteOptions;
+        return options as Capabilities.WebdriverIOConfig;
     }
 
     protected _extendCapabilities(config: BrowserConfig): Promise<WebdriverIO.Capabilities> {

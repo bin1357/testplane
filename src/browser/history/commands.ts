@@ -67,7 +67,7 @@ const wdioElementCommands = [
     "getValue",
     "isClickable",
     "isDisplayed",
-    "isDisplayedInViewport",
+    // "isDisplayedInViewport",
     "isEnabled",
     "isEqual",
     "isExisting",
