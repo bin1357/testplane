@@ -1,0 +1,13 @@
+export declare const CHROMEDRIVER_STORAGE_API = "https://chromedriver.storage.googleapis.com";
+export declare const GECKODRIVER_CARGO_TOML = "https://raw.githubusercontent.com/mozilla/geckodriver/release/Cargo.toml";
+export declare const MSEDGEDRIVER_API = "https://msedgedriver.azureedge.net";
+export declare const SAFARIDRIVER_PATH = "/usr/bin/safaridriver";
+export declare const MIN_CHROME_FOR_TESTING_VERSION = 113;
+export declare const MIN_CHROMEDRIVER_FOR_TESTING_VERSION = 115;
+export declare const MIN_CHROMEDRIVER_MAC_ARM_NEW_ARCHIVE_NAME = 106;
+export declare const MIN_CHROMIUM_MAC_ARM_VERSION = 93;
+export declare const MIN_CHROMIUM_VERSION = 73;
+export declare const MIN_EDGEDRIVER_VERSION = 94;
+export declare const DRIVER_WAIT_TIMEOUT: number;
+export declare const BYTES_PER_KILOBYTE: number;
+export declare const BYTES_PER_MEGABYTE: number;

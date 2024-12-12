@@ -1,0 +1,35 @@
+import { BrowserPlatform, Browser as PuppeteerBrowser } from "@puppeteer/browsers";
+import debug from "debug";
+export type DownloadProgressCallback = (downloadedBytes: number, totalBytes: number) => void;
+export declare const browserInstallerDebug: debug.Debugger;
+export declare const Browser: {
+    readonly CHROME: PuppeteerBrowser.CHROME;
+    readonly CHROMIUM: PuppeteerBrowser.CHROMIUM;
+    readonly FIREFOX: PuppeteerBrowser.FIREFOX;
+    readonly SAFARI: "safari";
+    readonly EDGE: "MicrosoftEdge";
+};
+export declare const Driver: {
+    readonly CHROMEDRIVER: PuppeteerBrowser.CHROMEDRIVER;
+    readonly GECKODRIVER: "geckodriver";
+    readonly SAFARIDRIVER: "safaridriver";
+    readonly EDGEDRIVER: "edgedriver";
+};
+export type SupportedBrowser = (typeof Browser)[keyof typeof Browser];
+export type SupportedDriver = (typeof Driver)[keyof typeof Driver];
+export declare const getDriverNameForBrowserName: (browserName: SupportedBrowser) => SupportedDriver | null;
+export declare const createBrowserLabel: (browserName: string, version?: string) => string;
+export declare const getMilestone: (version: string | number) => string;
+export declare const semverVersionsComparator: (a: string, b: string) => number;
+export declare const normalizeChromeVersion: (version: string) => string;
+export declare const getBrowserPlatform: () => BrowserPlatform;
+export declare const getChromePlatform: (version: string) => BrowserPlatform;
+export declare const getRegistryPath: (envValueOverride?: string) => string;
+export declare const getBrowsersDir: () => string;
+export declare const getGeckoDriverDir: (driverVersion: string) => string;
+export declare const getEdgeDriverDir: (driverVersion: string) => string;
+export declare const getChromiumDriverDir: (driverVersion: string) => string;
+export declare const getChromeDriverDir: () => string;
+export declare const retryFetch: (url: Parameters<typeof fetch>[0], opts?: Parameters<typeof fetch>[1], retry?: number, retryDelay?: number) => ReturnType<typeof fetch>;
+export declare const downloadFile: (url: string, filePath: string) => Promise<void>;
+export declare const unzipFile: (zipPath: string, outputDir: string) => Promise<string>;

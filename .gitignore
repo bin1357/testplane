@@ -1,6 +1,6 @@
 .DS_store
 .DS_Store
-build
+# build
 
 .idea
 .vscode
